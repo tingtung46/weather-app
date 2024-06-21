@@ -1,7 +1,14 @@
 {
-    "extends": ["prettier"],
-    "pluggins": ["prettier"],
-    "rules": {
-        "prettier/prettier": ["error"]
-    }
+  "extends": ["prettier"],
+  "pluggins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "indent": ["error", 2]
+  },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  }
 }
