@@ -5,7 +5,7 @@ const leftContainer = document.querySelector('.left-container');
 export const setupLeftContainer = (
   data,
   forecastData,
-  degreeCelcius,
+  celciusDegree,
 ) => {
   const weatherIcon = document.createElement('img');
   weatherIcon.classList.add('current-day-icon');
@@ -22,12 +22,12 @@ export const setupLeftContainer = (
   const tempWrapper = createTempWrapper(
     data,
     forecastData,
-    degreeCelcius,
+    celciusDegree,
   );
 
   const feelsLike = document.createElement('p');
   feelsLike.classList.add('feels-like');
-  feelsLike.textContent = `Feels like ${Math.floor(data.current.feelslike_c)}${degreeCelcius}`;
+  feelsLike.textContent = `Feels like ${Math.floor(data.current.feelslike_c)}${celciusDegree}`;
 
   const searchLoc = createSearchLoc();
   const tempToggleBtn = createTempToggleBtn();
@@ -43,24 +43,24 @@ export const setupLeftContainer = (
   );
 };
 
-const createTempWrapper = (data, forecastData, degreeCelcius) => {
+const createTempWrapper = (data, forecastData, celciusDegree) => {
   const tempWrapper = document.createElement('div');
   tempWrapper.classList.add('temp-wrapper');
 
   const temp = document.createElement('h1');
   temp.classList.add('avrg-temp');
-  temp.textContent = `${Math.floor(data.current.temp_c)}${degreeCelcius}`;
+  temp.textContent = `${Math.floor(data.current.temp_c)}${celciusDegree}`;
 
   const minMaxTemp = document.createElement('div');
   minMaxTemp.classList.add('minmax-temp');
 
   const minTemp = document.createElement('div');
   minTemp.classList.add('minmax');
-  minTemp.textContent = `${Math.floor(forecastData[0].day.mintemp_c)}${degreeCelcius}`;
+  minTemp.textContent = `${Math.floor(forecastData[0].day.mintemp_c)}${celciusDegree}`;
 
   const maxTemp = document.createElement('div');
   maxTemp.classList.add('minmax');
-  maxTemp.textContent = `${Math.floor(forecastData[0].day.maxtemp_c)}${degreeCelcius}`;
+  maxTemp.textContent = `${Math.floor(forecastData[0].day.maxtemp_c)}${celciusDegree}`;
 
   tempWrapper.append(temp, minMaxTemp);
   minMaxTemp.append(minTemp, maxTemp);
