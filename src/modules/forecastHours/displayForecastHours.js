@@ -2,8 +2,8 @@ import { setupHourInterval } from './hoursInterval';
 
 const currentHours = document.querySelector('.current-hours');
 
-export const setupForecastHours = (data, forecastData, celciusDegree) => {
-  const nextHours = setupHourInterval(data, forecastData, celciusDegree);
+export const setupForecastHours = (data, forecastData, celsiusDegree) => {
+  const nextHours = setupHourInterval(data, forecastData, celsiusDegree);
 
   nextHours.forEach((hour) => {
     const time = document.createElement('p');
@@ -15,7 +15,7 @@ export const setupForecastHours = (data, forecastData, celciusDegree) => {
     icon.src = hour.icon;
 
     const temp = document.createElement('p');
-    temp.classList.add('hour-temp');
+    temp.className = 'hour-temp temp';
     temp.textContent = hour.temp.temp_c;
 
     currentHours.append(time, icon, temp);

@@ -1,6 +1,6 @@
 import { format, getHours } from 'date-fns';
 
-export const setupHourInterval = (data, forecastData, celciusDegree) => {
+export const setupHourInterval = (data, forecastData, celsiusDegree) => {
   const currentDate = data.location.localtime;
   const currentHour = getHours(currentDate);
   let nextHours = [];
@@ -26,8 +26,8 @@ export const setupHourInterval = (data, forecastData, celciusDegree) => {
       time: time === '00:00' ? format(date, 'M/d') : time,
       icon: hour.condition.icon,
       temp: {
-        temp_c: `${Math.floor(hour.temp_c)}${celciusDegree}`,
-        temp_f: `${Math.floor(hour.temp_f)}${celciusDegree}`,
+        temp_c: `${Math.floor(hour.temp_c)}${celsiusDegree}`,
+        temp_f: `${Math.floor(hour.temp_f)}${celsiusDegree}`,
       },
     };
   });

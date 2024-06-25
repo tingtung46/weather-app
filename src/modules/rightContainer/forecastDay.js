@@ -3,7 +3,7 @@ import { format, isEqual } from 'date-fns';
 const forecastDay = document.querySelector('.forecast-day');
 const currentDate = format(new Date(), 'yyyy-MM-dd');
 
-export const displayDayInterval = (forecastData, celciusDegree) => {
+export const displayDayInterval = (forecastData, celsiusDegree) => {
   forecastData.forEach((forecastDayData) => {
     const day = document.createElement('div');
     day.classList.add('day');
@@ -19,8 +19,8 @@ export const displayDayInterval = (forecastData, celciusDegree) => {
     dayInfo.classList.add('day-weather-cond');
 
     const weatherTemp = document.createElement('p');
-    weatherTemp.classList.add('day-temp');
-    weatherTemp.textContent = `${Math.floor(forecastDayData.day.avgtemp_c)}${celciusDegree}`;
+    weatherTemp.className = 'day-temp temp';
+    weatherTemp.textContent = `${Math.floor(forecastDayData.day.avgtemp_c)}${celsiusDegree}`;
 
     if (isEqual(forecastDayData.date, currentDate)) {
       dayInfo.textContent = 'Today';
