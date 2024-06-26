@@ -4,8 +4,8 @@ import { displayDayInterval } from './rightContainer/forecastDay';
 import { displayCurrentDayInfo } from './rightContainer/currentDayInfo';
 import { setupForecastHours } from './forecastHours/displayForecastHours';
 
-const celsiusDegree = '\u2103';
-const fahrenheitDegree = '\u2109';
+const celsiusDegree = '\u00B0C';
+const fahrenheitDegree = '\u00B0F';
 
 export const displayContent = (weatherLocation) => {
   const weather = getWeather(weatherLocation);

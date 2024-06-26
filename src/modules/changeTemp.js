@@ -5,11 +5,11 @@ export const changeTemp = (toggleBtn, celsiusDegree, fahrenheitDegree) => {
     if (toggleBtn.checked) {
       if (temp.textContent.includes(celsiusDegree)) {
         if (temp.textContent.includes('Feels like')) {
-          const temperature = temp.textContent.split(' ')[2].slice(0, -1);
+          const temperature = temp.textContent.split(' ')[2].slice(0, -2);
           const newTemp = `Feels like ${convertToImperial(temperature)}${fahrenheitDegree}`;
           temp.textContent = newTemp;
         } else {
-          const temperature = temp.textContent.slice(0, -1);
+          const temperature = temp.textContent.slice(0, -2);
           const newTemp = `${convertToImperial(temperature)}${fahrenheitDegree}`;
           temp.textContent = newTemp;
         }
@@ -17,11 +17,11 @@ export const changeTemp = (toggleBtn, celsiusDegree, fahrenheitDegree) => {
     } else if (!toggleBtn.checked) {
       if (temp.textContent.includes(fahrenheitDegree)) {
         if (temp.textContent.includes('Feels like')) {
-          const temperature = temp.textContent.split(' ')[2].slice(0, -1);
+          const temperature = temp.textContent.split(' ')[2].slice(0, -2);
           const newTemp = `Feels like ${convertToMetric(temperature)}${celsiusDegree}`;
           temp.textContent = newTemp;
         } else {
-          const temperature = temp.textContent.slice(0, -1);
+          const temperature = temp.textContent.slice(0, -2);
           const newTemp = `${convertToMetric(temperature)}${celsiusDegree}`;
           temp.textContent = newTemp;
         }
