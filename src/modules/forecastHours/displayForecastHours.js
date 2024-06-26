@@ -6,6 +6,9 @@ export const setupForecastHours = (data, forecastData, celsiusDegree) => {
   const nextHours = setupHourInterval(data, forecastData, celsiusDegree);
 
   nextHours.forEach((hour) => {
+    const card = document.createElement('div');
+    card.classList.add('hour-card');
+
     const time = document.createElement('p');
     time.classList.add('time');
     time.textContent = hour.time;
@@ -18,6 +21,7 @@ export const setupForecastHours = (data, forecastData, celsiusDegree) => {
     temp.className = 'hour-temp temp';
     temp.textContent = hour.temp.temp_c;
 
-    currentHours.append(time, icon, temp);
+    card.append(time, icon, temp);
+    currentHours.appendChild(card);
   });
 };
