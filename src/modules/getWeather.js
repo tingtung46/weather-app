@@ -3,6 +3,7 @@ import { setupLeftContainer } from './leftContainer/leftContainer';
 import { displayDayInterval } from './rightContainer/forecastDay';
 import { displayCurrentDayInfo } from './rightContainer/currentDayInfo';
 import { setupForecastHours } from './forecastHours/displayForecastHours';
+import { displayBg } from './background/applyBg';
 
 const celsiusDegree = '\u00B0C';
 const fahrenheitDegree = '\u00B0F';
@@ -19,6 +20,7 @@ export const displayContent = (weatherLocation) => {
       displayDayInterval(forecastData, celsiusDegree);
       displayCurrentDayInfo(data, forecastData);
       setupForecastHours(data, forecastData, celsiusDegree);
+      displayBg();
     })
     .catch((err) => {
       console.error(err);
