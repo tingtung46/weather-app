@@ -24,7 +24,8 @@ export const setupLeftContainer = (data, forecastData, celsiusDegree, fahrenheit
   feelsLike.textContent = `Feels like ${Math.floor(data.current.feelslike_c)}${celsiusDegree}`;
 
   const searchLoc = createSearchLoc();
-  const tempToggleBtn = createTempToggleBtn(celsiusDegree, fahrenheitDegree);
+  const tempToggleInp = createTempToggleBtn(celsiusDegree, fahrenheitDegree).tempInput;
+  const tempToggleLabel = createTempToggleBtn(celsiusDegree, fahrenheitDegree).tempLabel;
 
   leftContainer.append(
     weatherIcon,
@@ -33,6 +34,7 @@ export const setupLeftContainer = (data, forecastData, celsiusDegree, fahrenheit
     tempWrapper,
     feelsLike,
     searchLoc,
-    tempToggleBtn,
+    tempToggleInp,
+    tempToggleLabel,
   );
 };
