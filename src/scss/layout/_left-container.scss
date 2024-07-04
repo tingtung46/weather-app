@@ -1,0 +1,108 @@
+@use '../util' as u;
+
+.left-container {
+  .weather-condition {
+    font-size: u.rem(24);
+    margin-bottom: 0;
+  }
+
+  .temp-wrapper {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: u.rem(10);
+
+    .avrg-temp,
+    .minmax {
+      margin-bottom: 0;
+    }
+
+    .minmax {
+      font-size: u.rem(12);
+    }
+  }
+
+  form {
+    position: relative;
+
+    input {
+      outline: none;
+      border-style: none;
+      background: var(--text-color);
+      display: block;
+      border-radius: u.rem(6);
+      padding: u.rem(2) 0;
+      padding-left: u.rem(12);
+      width: u.rem(150);
+      box-shadow: var(--shadow-color);
+      margin-bottom: u.rem(16);
+    }
+
+    input::placeholder {
+      padding-left: u.rem(16);
+    }
+
+    .loc-icon {
+      position: absolute;
+      transform: translateY(-50%);
+      left: 6%;
+      top: 49%;
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  .btn {
+    display: block;
+    width: 90px;
+    height: 50px;
+    background-color: hsl(0, 0%, 92%);
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    box-shadow:
+      inset 0px 5px 15px rgba($color: hsl(0, 0%, 0%), $alpha: 0.4),
+      inset 0px -5px 15px rgba($color: hsl(0, 0%, 100%), $alpha: 0.4);
+
+    &:after {
+      content: '\00B0 C';
+      font-weight: 600;
+      display: grid;
+      place-content: center;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(180deg, hsl(34, 100%, 77%), hsl(36, 90%, 45%));
+      border-radius: 50%;
+      box-shadow: 0 5px 10px rgba($color: hsl(0, 0%, 0%), $alpha: 0.2);
+      position: absolute;
+      top: 5px;
+      left: 5px;
+    }
+
+    &,
+    &:after {
+      transition: 0.3s;
+    }
+
+    &:active:after {
+      width: 55px;
+    }
+  }
+
+  #toggle {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+
+  #toggle:checked + .btn {
+    background-color: hsl(0, 0%, 14%);
+  }
+
+  #toggle:checked + .btn:after {
+    content: '\00B0 F';
+    left: 85px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, hsl(0, 0%, 47%), hsl(0, 0%, 23%));
+  }
+}
