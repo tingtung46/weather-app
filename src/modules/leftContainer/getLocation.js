@@ -19,6 +19,17 @@ export const createSearchLoc = () => {
 
   searchLoc.append(searchInp, locIcon);
 
+  searchInp.addEventListener('focus', () => {
+    locIcon.style.display = 'none';
+    searchInp.dataset.placeholder = searchInp.placeholder;
+    searchInp.placeholder = '';
+  });
+
+  searchInp.addEventListener('blur', () => {
+    searchInp.placeholder = searchInp.dataset.placeholder;
+    locIcon.style.display = 'block';
+  });
+
   getLocation(searchLoc);
 
   return searchLoc;
