@@ -17,8 +17,11 @@ export const displayCurrentDayInfo = (data, forecastData) => {
 const createWindSpeedInfo = (data) => {
   const windSpeedInfo = document.createElement('div');
   const windSpeedIcon = document.createElement('img');
+  windSpeedInfo.classList.add('item-info');
+  windSpeedIcon.classList.add('icon-info');
+
   windSpeedIcon.src = windSpeed;
-  const windSpeedText = document.createElement('span');
+  const windSpeedText = document.createElement('p');
   windSpeedText.textContent = `${data.current.wind_kph} km/h`;
 
   windSpeedInfo.append(windSpeedIcon, windSpeedText);
@@ -28,8 +31,11 @@ const createWindSpeedInfo = (data) => {
 const createHumidityInfo = (data) => {
   const humidityInfo = document.createElement('div');
   const humidityIcon = document.createElement('img');
+  humidityInfo.classList.add('item-info');
+  humidityIcon.classList.add('icon-info');
+
   humidityIcon.src = humidity;
-  const humidityText = document.createElement('span');
+  const humidityText = document.createElement('p');
   humidityText.textContent = `${data.current.humidity}%`;
 
   humidityInfo.append(humidityIcon, humidityText);
@@ -39,9 +45,11 @@ const createHumidityInfo = (data) => {
 const createSunriseInfo = (forecastData) => {
   const sunriseInfo = document.createElement('div');
   const sunriseIcon = document.createElement('img');
-  sunriseIcon.src = sunrise;
+  sunriseInfo.classList.add('item-info');
+  sunriseIcon.classList.add('icon-info');
 
-  const sunriseText = document.createElement('span');
+  sunriseIcon.src = sunrise;
+  const sunriseText = document.createElement('p');
   const sunriseTime = forecastData[0].astro.sunrise;
   sunriseText.textContent = convertTime12to24(sunriseTime);
 
@@ -52,9 +60,11 @@ const createSunriseInfo = (forecastData) => {
 const createSunsetInfo = (forecastData) => {
   const sunsetInfo = document.createElement('div');
   const sunsetIcon = document.createElement('img');
-  sunsetIcon.src = sunset;
+  sunsetInfo.classList.add('item-info');
+  sunsetIcon.classList.add('icon-info');
 
-  const sunsetText = document.createElement('span');
+  sunsetIcon.src = sunset;
+  const sunsetText = document.createElement('p');
   const sunsetTime = forecastData[0].astro.sunset;
   sunsetText.textContent = convertTime12to24(sunsetTime);
 

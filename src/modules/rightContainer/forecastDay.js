@@ -15,7 +15,7 @@ export const displayDayInterval = (forecastData, celsiusDegree) => {
     const weatherInfo = document.createElement('div');
     weatherInfo.classList.add('day-info');
 
-    const dayInfo = document.createElement('span');
+    const dayInfo = document.createElement('p');
     dayInfo.classList.add('day-weather-cond');
 
     const weatherTemp = document.createElement('p');
