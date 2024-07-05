@@ -1,0 +1,94 @@
+@use '../util' as u;
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  .forecast-day {
+    display: flex;
+    flex-direction: column;
+    height: u.rem(130);
+    width: u.rem(250);
+    overflow: hidden;
+    margin-bottom: u.rem(20);
+    backdrop-filter: blur(10px);
+    box-shadow:
+      0px 2px 5px rgba(130, 130, 130, 0.45),
+      0px -2px 5px rgba(130, 130, 130, 0.45);
+    padding: u.rem(10) u.rem(14);
+    border-radius: 8px;
+
+    &:hover {
+      overflow: auto;
+    }
+
+    &::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--text-color);
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: rgba(199, 199, 199, 0.6);
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #cccaca;
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+      background-color: #999999;
+    }
+
+    .day {
+      display: flex;
+      align-items: center;
+      gap: u.rem(12);
+
+      .day-icon {
+        display: inline-block;
+      }
+
+      .day-info {
+        p {
+          margin-bottom: 0;
+        }
+
+        .day-weather-cond {
+          font-size: u.rem(18);
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .current-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: u.rem(10);
+
+    .item-info {
+      display: flex;
+      align-items: center;
+      gap: u.rem(10);
+
+      .icon-info {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+      }
+
+      p {
+        margin-bottom: 0;
+        font-size: u.rem(22);
+        font-weight: 600;
+      }
+    }
+  }
+}
