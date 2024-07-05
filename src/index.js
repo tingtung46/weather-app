@@ -1,4 +1,6 @@
-import { getWeather } from './modules/fetchAPI';
+import './scss/style.scss';
+import { displayContent } from './modules/getWeather';
 
-const weather = await getWeather('washington');
-console.log(weather);
+document.addEventListener('DOMContentLoaded', () => {
+  displayContent('washington');
+});
